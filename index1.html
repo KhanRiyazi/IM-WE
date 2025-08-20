@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMWE - 5x ROI Guaranteed for Coaches</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* IMWE Brand Colors */
+        :root {
+            --primary: #0A2463;
+            --secondary: #D8315B;
+            --accent: #1E91D6;
+            --light: #F2F4F7;
+            --dark: #1A1A2E;
+            --success: #3E8914;
+        }
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        h1 {
+            font-size: 3.5rem;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.8rem;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(216, 49, 91, 0.4);
+        }
+
+        .btn-primary:hover {
+            background-color: #c22a50;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 18px rgba(216, 49, 91, 0.5);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .hero-visual {
+            flex: 1;
+            position: relative;
+        }
+
+        .slot-machine {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(145deg, #2b2d42, #1a1a2e);
+            border-radius: 15px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .reels {
+            display: flex;
+            justify-content: space-around;
+            padding: 30px;
+        }
+
+        .reel {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .lever {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            width: 20px;
+            height: 100px;
+            background: var(--secondary);
+            border-radius: 10px;
+            transform-origin: bottom center;
+            transform: rotate(-10deg);
+            transition: transform 0.5s ease;
+        }
+
+        .lever:hover {
+            transform: rotate(10deg);
+        }
+
+        /* Social Proof */
+        .social-proof {
+            background-color: var(--light);
+        }
+
+        .client-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .client-logo {
+            height: 60px;
+            opacity: 0.7;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+
+        .client-logo:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .stars {
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        /* How It Works */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .step {
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .step:hover {
+            transform: translateY(-10px);
+        }
+
+        .step-icon {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        /* Value/Benefits */
+        .value-section {
+            background-color: var(--light);
+        }
+
+        .value-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+
+        .problems,
+        .solutions {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .problem-item,
+        .solution-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .problem-item i,
+        .solution-item i {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .problem-item i {
+            color: var(--secondary);
+        }
+
+        .solution-item i {
+            color: var(--success);
+        }
+
+        /* Case Studies */
+        .case-studies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .case-study {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .case-image {
+            height: 200px;
+            background: linear-gradient(45deg, #3a86ff, #8338ec);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .case-content {
+            padding: 25px;
+        }
+
+        .case-results {
+            display: flex;
+            justify-content: space-around;
+            background: var(--light);
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .result-before,
+        .result-after {
+            text-align: center;
+        }
+
+        .result-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .result-before .result-value {
+            color: var(--secondary);
+        }
+
+        .result-after .result-value {
+            color: var(--success);
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .founder-image {
+            background: linear-gradient(45deg, #0A2463, #1E91D6);
+            height: 400px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        /* Guarantee */
+        .guarantee {
+            background: linear-gradient(135deg, #0A2463 0%, #1A1A2E 100%);
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .guarantee h2 {
+            color: white;
+        }
+
+        .guarantee-badge {
+            width: 150px;
+            height: 150px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 2.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* FAQ */
+        .faq-section {
+            background-color: var(--light);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: white;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            text-align: center;
+            padding: 100px 0;
+        }
+
+        .footer {
+            background: var(--dark);
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        .footer-logo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Coaches, Stop Gambling With Your Growth</h1>
+                    <p class="hero-subtitle">IMWE clients get 5x returns — guaranteed.</p>
+                    <a href="#cta" class="btn btn-primary">Book Your Free Strategy Call</a>
+                </div>
+                <div class="hero-visual">
+                    <div class="slot-machine">
+                        <div class="reels">
+                            <div class="reel">$</div>
+                            <div class="reel">5X</div>
+                            <div class="reel">ROI</div>
+                        </div>
+                        <div class="lever"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof Section -->
+    <section class="social-proof">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trusted by Top Coaches Worldwide</h2>
+            </div>
+
+            <div class="client-logos">
+                <div class="client-logo">CLIENT LOGO 1</div>
+                <div class="client-logo">CLIENT LOGO 2</div>
+                <div class="client-logo">CLIENT LOGO 3</div>
+                <div class="client-logo">CLIENT LOGO 4</div>
+                <div class="client-logo">CLIENT LOGO 5</div>
+            </div>
+
+            <div class="testimonials">
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"IMWE transformed my coaching business. I went from inconsistent revenue
+                        to predictable growth and 5x ROI in just 3 months!"</p>
+                    <p class="testimonial-author">- Sarah Johnson, Business Coach</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The NMNS system is a game-changer. No more ghosting clients or wasted
+                        ad spend. IMWE delivers on their promise."</p>
+                    <p class="testimonial-author">- Michael Chen, Executive Coach</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"I was skeptical about the guarantee, but IMWE exceeded my expectations.
+                        My coaching business has never been more profitable."</p>
+                    <p class="testimonial-author">- David Rodriguez, Life Coach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-title">
+                <h2>How IMWE Delivers 5x ROI</h2>
+                <p>A proven 3-step process that transforms your coaching business</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Performance Marketing</h3>
+                    <p>We implement data-driven marketing strategies that attract high-value clients consistently.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>NMNS Systems</h3>
+                    <p>Our proprietary No-More-No-Show systems eliminate ghosting and ensure client commitment.</p>
+                </div>
+
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3>Predictable Growth</h3>
+                    <p>Scale your coaching business with predictable revenue streams and maximized ROI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value/Benefits Section -->
+    <section class="value-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Transform Your Coaching Business</h2>
+                <p>From struggling to scaling with proven systems</p>
+            </div>
+
+            <div class="value-content">
+                <div class="problems">
+                    <h3>Problems Coaches Face</h3>
+
+                    <div class="problem-item">
+                        <i class="fas fa-times-circle"></i>
+                        <div>
+                            <h4>Client Ghosting</h4>
+                            <p>Prospects disappear after initial conversations, wasting your time and energy.</p>
+                        </div>
+                    </div>
+
+                    <div class="problem-item">
+                        <i class="fas fa-times-circle"></i>
+                        <div>
+                            <h4>Empty Calendars</h4>
+                            <p>Struggling to fill your coaching slots with qualified, paying clients.</p>
+                        </div>
+                    </div>
+
+                    <div class="problem-item">
+                        <i class="fas fa-times-circle"></i>
+                        <div>
+                            <h4>Wasted Ad Spend</h4>
+                            <p>Advertising that costs money but doesn't convert to paying clients.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solutions">
+                    <h3>How IMWE Solves Them</h3>
+
+                    <div class="solution-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Eliminate Ghosting</h4>
+                            <p>Our NMNS system ensures committed clients who show up and pay.</p>
+                        </div>
+                    </div>
+
+                    <div class="solution-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>Calendar Filling</h4>
+                            <p>Consistent flow of pre-qualified clients ready to book sessions.</p>
+                        </div>
+                    </div>
+
+                    <div class="solution-item">
+                        <i class="fas fa-check-circle"></i>
+                        <div>
+                            <h4>ROI-Focused Ads</h4>
+                            <p>Performance marketing that converts to revenue, not just leads.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Section -->
+    <section class="case-studies-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Proven Results: Real Coach Transformations</h2>
+                <p>See how IMWE has delivered 5x ROI for coaches across industries</p>
+            </div>
+
+            <div class="case-studies">
+                <div class="case-study">
+                    <div class="case-image">CASE STUDY 1</div>
+                    <div class="case-content">
+                        <h3>Executive Coaching Business</h3>
+                        <p>Transformed from inconsistent revenue to predictable high-ticket client acquisitions.</p>
+
+                        <div class="case-results">
+                            <div class="result-before">
+                                <div class="result-value">$12K</div>
+                                <div class="result-label">Monthly Revenue</div>
+                            </div>
+
+                            <div class="result-after">
+                                <div class="result-value">$68K</div>
+                                <div class="result-label">Monthly Revenue</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-image">CASE STUDY 2</div>
+                    <div class="case-content">
+                        <h3>Life Coaching Practice</h3>
+                        <p>Went from struggling to fill slots to having a waiting list of qualified clients.</p>
+
+                        <div class="case-results">
+                            <div class="result-before">
+                                <div class="result-value">4</div>
+                                <div class="result-label">Clients/Month</div>
+                            </div>
+
+                            <div class="result-after">
+                                <div class="result-value">22</div>
+                                <div class="result-label">Clients/Month</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="case-study">
+                    <div class="case-image">CASE STUDY 3</div>
+                    <div class="case-content">
+                        <h3>Business Coaching Firm</h3>
+                        <p>Scaled from solo practitioner to multi-coach firm with systems and predictability.</p>
+
+                        <div class="case-results">
+                            <div class="result-before">
+                                <div class="result-value">1</div>
+                                <div class="result-label">Coach</div>
+                            </div>
+
+                            <div class="result-after">
+                                <div class="result-value">5</div>
+                                <div class="result-label">Coaches</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why IMWE Is Different</h2>
+                <p>We guarantee results because our systems work</p>
+            </div>
+
+            <div class="about-content">
+                <div class="founder-image">FOUNDER IMAGE</div>
+
+                <div class="about-text">
+                    <h3>The IMWE Difference</h3>
+                    <p>IMWE was founded by coaches for coaches. We understand the unique challenges you face in growing
+                        your practice and attracting ideal clients.</p>
+
+                    <p>Unlike other marketing agencies, we don't just generate leads. We implement complete systems that
+                        ensure those leads become paying, committed clients who show up and achieve results.</p>
+
+                    <p>Our proprietary NMNS (No-More-No-Shows) methodology combined with performance marketing
+                        strategies delivers predictable growth and guaranteed ROI.</p>
+
+                    <p>When you partner with IMWE, you're not just getting another marketing service. You're getting a
+                        business growth partner committed to your success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-badge">
+                <i class="fas fa-medal"></i>
+            </div>
+
+            <h2>We Promise 5x Revenue Growth When You Follow the System</h2>
+            <p>Our guarantee is simple: implement our proven systems and achieve 5x returns on your investment with
+                IMWE. If you don't see results, we'll work with you until you do.</p>
+
+            <p>No empty promises. No vague claims. Just measurable, guaranteed growth for your coaching business.</p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Everything you need to know about IMWE</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How quickly will I see results? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most coaches see significant improvements within the first 30-60 days. Full 5x ROI is
+                            typically achieved within 3-6 months of implementing our systems.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        What makes IMWE different from other marketing agencies? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We focus on complete business systems, not just marketing. Our NMNS methodology ensures that
+                            leads convert to committed, paying clients who show up for sessions.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Is the 5x ROI guarantee real? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely. We're so confident in our systems that we guarantee 5x returns when you implement
+                            our methodology. We work with you until you achieve these results.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        Do I need to have an existing client base? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Not at all. Our systems work for coaches at all stages - from just starting out to
+                            established practices looking to scale.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">
+                        How much time will this require from me? <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We handle the implementation while you focus on coaching. You'll need to allocate time for
+                            strategy sessions and implementing our client acquisition systems, but we minimize the time
+                            burden on you.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="cta">
+        <div class="container">
+            <h2>Ready to Build Predictable Growth?</h2>
+            <p>Stop gambling with your coaching business growth. Book your free strategy call today and discover how
+                IMWE can deliver 5x ROI for your practice.</p>
+
+            <a href="#" class="btn btn-primary">Book Your Free Strategy Call</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-logo">IMWE</div>
+            <p>© 2023 IMWE. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+
+                const icon = question.querySelector('i');
+                if (item.classList.contains('active')) {
+                    icon.classList.remove('fa-chevron-down');
+                    icon.classList.add('fa-chevron-up');
+                } else {
+                    icon.classList.remove('fa-chevron-up');
+                    icon.classList.add('fa-chevron-down');
+                }
+            });
+        });
+
+        // Simple animation for the slot machine on hover
+        const lever = document.querySelector('.lever');
+        const reels = document.querySelectorAll('.reel');
+
+        lever.addEventListener('mouseenter', () => {
+            reels.forEach(reel => {
+                reel.textContent = ['$', '5X', 'ROI'][Math.floor(Math.random() * 3)];
+            });
+        });
+    </script>
+</body>
+
+</html>

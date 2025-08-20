@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM WE - Instagram Mastery for Women Entrepreneurs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Import modern fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background: #fafafa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, #8A2BE2, #5D3FD3);
+            color: white;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.1) 0%, rgba(93, 63, 211, 0.1) 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #555;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(to right, #8A2BE2, #5D3FD3);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(93, 63, 211, 0.3);
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(to right, #7930c0, #4c32ab);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(93, 63, 211, 0.4);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: #444;
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Problem Section */
+        .problem {
+            background: white;
+        }
+
+        .problem-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .problem-content {
+            flex: 1;
+        }
+
+        .problem-image {
+            flex: 1;
+            background: #f0ebff;
+            border-radius: 16px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 8rem;
+            color: #5D3FD3;
+        }
+
+        .problem-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .problem-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .problem-list li:before {
+            content: "❌";
+            position: absolute;
+            left: 0;
+            color: #ff6b6b;
+        }
+
+        /* Solution Section */
+        .solution {
+            background: linear-gradient(135deg, rgba(138, 43, 226, 0.05) 0%, rgba(93, 63, 211, 0.05) 100%);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: #5D3FD3;
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        /* Creative Showcase Section */
+        .showcase-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .showcase-tab {
+            padding: 12px 25px;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .showcase-tab.active {
+            background: linear-gradient(to right, #8A2BE2, #5D3FD3);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(93, 63, 211, 0.3);
+        }
+
+        .showcase-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .showcase-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Carousel Styles */
+        .carousel-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            padding: 40px;
+            text-align: center;
+            background: white;
+        }
+
+        .slide-1 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        }
+
+        .slide-2 {
+            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+        }
+
+        .slide-3 {
+            background: linear-gradient(135deg, #84fab0 0%, #8fd3f4 100%);
+        }
+
+        .carousel-slide h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .carousel-slide p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .slide-img {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 12px;
+            margin: 0 auto 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 5rem;
+            color: #5D3FD3;
+        }
+
+        .carousel-controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .carousel-btn {
+            background: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 10px;
+            cursor: pointer;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .carousel-btn:hover {
+            background: #5D3FD3;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: white;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            background: #5D3FD3;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.2rem;
+            margin-right: 15px;
+        }
+
+        .author-info h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            text-align: center;
+            background: linear-gradient(to right, #8A2BE2, #5D3FD3);
+            color: white;
+            padding: 100px 0;
+        }
+
+        .final-cta h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 50px 0 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer-section {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section ul li a:hover {
+            color: white;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+
+        .social-links a:hover {
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #555;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 20px;
+                justify-content: center;
+            }
+
+            nav ul li {
+                margin: 0 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .problem-container {
+                flex-direction: column;
+            }
+
+            .problem-image {
+                width: 100%;
+                margin-top: 30px;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .final-cta h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">IM WE</div>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#showcase">Showcase</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#cta" class="cta-button">Enroll Now</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Master Instagram & Grow Your Business</h1>
+            <p>IM WE is the premier Instagram mastery course designed specifically for women entrepreneurs who want to
+                turn their social media presence into a powerful sales engine.</p>
+            <a href="https://technologymoguls.com/?utm_source=Facebook&utm_medium=Facebook%20ads&utm_campaign=IMWE%20CB%201&utm_term=courses&utm_content=AA%20Agency%20Video%201"
+                class="cta-button">Start Your Journey Today</a>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Are You Struggling With Instagram?</h2>
+                <p>Many women entrepreneurs face these common challenges</p>
+            </div>
+            <div class="problem-container">
+                <div class="problem-content">
+                    <h3>You're creating content but seeing little results</h3>
+                    <p>It feels like you're shouting into a void with minimal engagement, few followers, and even fewer
+                        customers.</p>
+                    <ul class="problem-list">
+                        <li>Posting consistently but not growing your audience</li>
+                        <li>Uncertain about what type of content to create</li>
+                        <li>Low engagement despite your efforts</li>
+                        <li>Not converting followers into customers</li>
+                        <li>Overwhelmed by algorithm changes</li>
+                    </ul>
+                </div>
+                <div class="problem-image">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Transform Your Instagram Presence</h2>
+                <p>IM WE gives you the exact strategies and framework to master Instagram marketing</p>
+            </div>
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-chess"></i>
+                    </div>
+                    <h3>Content Strategy</h3>
+                    <p>Learn what to post, when to post, and why it works to maximize your reach and engagement.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Reels & Video Mastery</h3>
+                    <p>Create engaging short-form video content that captures attention and goes viral.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community Building</h3>
+                    <p>Grow a loyal, engaged following that trusts your expertise and buys your products.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <h3>Monetization Strategies</h3>
+                    <p>Turn followers into customers with proven conversion techniques and sales funnels.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3>Personal Branding</h3>
+                    <p>Build a powerful and authentic brand that stands out in a crowded marketplace.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fas fa-analytics"></i>
+                    </div>
+                    <h3>Analytics & Optimization</h3>
+                    <p>Understand your metrics and optimize your strategy for continuous growth.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Creative Showcase Section -->
+    <section class="showcase" id="showcase">
+        <div class="container">
+            <div class="section-title">
+                <h2>Creative Marketing Assets</h2>
+                <p>Explore our engaging marketing materials designed to convert</p>
+            </div>
+
+            <div class="showcase-tabs">
+                <button class="showcase-tab active" data-tab="carousel">Carousel Ad</button>
+                <button class="showcase-tab" data-tab="poster">Empowerment Poster</button>
+                <button class="showcase-tab" data-tab="stories">Instagram Stories</button>
+                <button class="showcase-tab" data-tab="video">Video Script</button>
+            </div>
+
+            <!-- Carousel Ad Content -->
+            <div class="showcase-content active" id="carousel">
+                <div class="carousel-container">
+                    <div class="carousel">
+                        <div class="carousel-slide slide-1">
+                            <div class="slide-img">
+                                <i class="fas fa-meh"></i>
+                            </div>
+                            <h3>Struggling to get seen on Instagram?</h3>
+                            <p>You're creating content but it feels like you're shouting into the void with little
+                                engagement or growth.</p>
+                        </div>
+                        <div class="carousel-slide slide-2">
+                            <div class="slide-img">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3>Transform your profile into a lead generator!</h3>
+                            <p>Imagine turning your Instagram into a powerful sales channel that consistently brings in
+                                customers.</p>
+                        </div>
+                        <div class="carousel-slide slide-3">
+                            <div class="slide-img">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3>Join IM WE - Instagram Mastery for Women Entrepreneurs</h3>
+                            <p>Our proven system will teach you exactly how to grow your audience and convert followers
+                                into paying customers.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="carousel-btn" id="prev-btn">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="carousel-btn" id="next-btn">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Other showcase content would go here -->
+            <div class="showcase-content" id="poster">
+                <div class="poster-container"
+                    style="max-width: 800px; margin: 0 auto; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 16px; overflow: hidden; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); color: white; padding: 50px 40px; text-align: center;">
+                    <h2 class="poster-title"
+                        style="font-family: 'Playfair Display', serif; font-weight: 900; font-size: 3rem; line-height: 1.2; margin-bottom: 20px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);">
+                        Your Business. Your Rules. Your Audience.</h2>
+                    <p class="poster-subtitle"
+                        style="font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.5rem; margin-bottom: 30px; opacity: 0.9;">
+                        Stop scrolling, start scaling. Master Instagram with IM WE.</p>
+
+                    <div class="women-silhouettes"
+                        style="display: flex; justify-content: center; gap: 20px; margin: 40px 0;">
+                        <div class="silhouette"
+                            style="width: 100px; height: 100px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2.5rem;">
+                            <i class="fas fa-female"></i></div>
+                        <div class="silhouette"
+                            style="width: 100px; height: 100px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2.5rem;">
+                            <i class="fas fa-female"></i></div>
+                        <div class="silhouette"
+                            style="width: 100px; height: 100px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2.5rem;">
+                            <i class="fas fa-female"></i></div>
+                        <div class="silhouette"
+                            style="width: 100px; height: 100px; background: rgba(255, 255, 255, 0.2); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2.5rem;">
+                            <i class="fas fa-female"></i></div>
+                    </div>
+
+                    <a href="https://technologymoguls.com/?utm_source=Facebook&utm_medium=Facebook%20ads&utm_campaign=IMWE%20CB%201&utm_term=courses&utm_content=AA%20Agency%20Video%201"
+                        class="poster-cta"
+                        style="display: inline-block; padding: 16px 40px; background: white; color: #5D3FD3; border: none; border-radius: 50px; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.2rem; cursor: pointer; transition: all 0.3s ease; text-decoration: none; box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);">Enroll
+                        Now <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="showcase-content" id="stories">
+                <div class="stories-container"
+                    style="display: flex; justify-content: center; flex-wrap: wrap; gap: 20px; margin: 0 auto; max-width: 1000px;">
+                    <div class="story"
+                        style="width: 280px; height: 500px; border-radius: 20px; overflow: hidden; position: relative; background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; text-align: center;">
+                        <div class="story-icon" style="font-size: 4rem; margin-bottom: 25px;">📈</div>
+                        <div class="story-text"
+                            style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; margin-bottom: 30px;">
+                            Get More Leads</div>
+                        <p>Learn how to turn your Instagram profile into a lead generation machine that attracts ideal
+                            customers.</p>
+                    </div>
+                    <div class="story"
+                        style="width: 280px; height: 500px; border-radius: 20px; overflow: hidden; position: relative; background: linear-gradient(135deg, #7ae7ff 0%, #47cfeb 100%); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; text-align: center;">
+                        <div class="story-icon" style="font-size: 4rem; margin-bottom: 25px;">🎥</div>
+                        <div class="story-text"
+                            style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; margin-bottom: 30px;">
+                            Create Viral Reels</div>
+                        <p>Master the art of creating engaging Reels that reach thousands of potential customers.</p>
+                    </div>
+                    <div class="story"
+                        style="width: 280px; height: 500px; border-radius: 20px; overflow: hidden; position: relative; background: linear-gradient(135deg, #7bf1a8 0%, #42db87 100%); color: white; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px; text-align: center;">
+                        <div class="story-icon" style="font-size: 4rem; margin-bottom: 25px;">💬</div>
+                        <div class="story-text"
+                            style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.8rem; margin-bottom: 30px;">
+                            Build a True Community</div>
+                        <p>Develop an engaged community that trusts your expertise and buys your products.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="showcase-content" id="video">
+                <div class="script-container"
+                    style="max-width: 800px; margin: 0 auto; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);">
+                    <div class="script-scene" style="padding: 30px; border-bottom: 1px solid #eee;">
+                        <div class="scene-header"
+                            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <span class="scene-time"
+                                style="font-family: 'Montserrat', sans-serif; font-weight: 600; color: #5D3FD3; background: #f0ebff; padding: 5px 12px; border-radius: 20px; font-size: 0.9rem;">0-3s</span>
+                            <h3 class="scene-title"
+                                style="font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.3rem; color: #444;">
+                                Hook</h3>
+                        </div>
+                        <div class="scene-content" style="display: flex; gap: 20px;">
+                            <div class="scene-visual"
+                                style="width: 40%; background: #f8f9fa; border-radius: 10px; padding: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 150px;">
+                                <div class="visual-icon"
+                                    style="font-size: 2.5rem; color: #5D3FD3; margin-bottom: 10px;"><i
+                                        class="fas fa-meh"></i></div>
+                                <div class="visual-description"
+                                    style="text-align: center; font-size: 0.9rem; color: #6c757d;">Woman looking
+                                    frustrated at her phone showing low engagement</div>
+                            </div>
+                            <div class="scene-dialogue" style="width: 60%;">
+                                <div class="dialogue-text"
+                                    style="background: #f8f9fa; padding: 20px; border-radius: 10px; border-left: 4px solid #5D3FD3; font-size: 1.1rem; line-height: 1.5;">
+                                    "Does your Instagram feel like you're shouting into a void?"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="play-btn"
+                        style="display: block; width: 100%; padding: 15px; background: linear-gradient(to right, #8A2BE2, #5D3FD3); color: white; border: none; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: all 0.3s ease; margin-top: 20px; text-align: center;">
+                        <i class="fas fa-play-circle"></i> Play Video Ad Concept
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Success Stories</h2>
+                <p>Hear from women entrepreneurs who transformed their business with IM WE</p>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "Before IM WE, I was posting consistently but seeing zero growth. Just two months after
+                        implementing the strategies, I've doubled my followers and made $8,000 in sales directly from
+                        Instagram!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">S</div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <p>Founder, Bloom Jewelry</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "The Reels strategy alone was worth the investment! I went from 200 to 12,000 followers in 3
+                        months and now have a waiting list for my coaching services. This course is a game-changer!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">M</div>
+                        <div class="author-info">
+                            <h4>Michelle Rodriguez</h4>
+                            <p>Business Coach</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-text">
+                        "I was ready to give up on Instagram before finding IM WE. The community building modules helped
+                        me connect with my ideal customers, and I've 5x'd my revenue in just 6 months."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">A</div>
+                        <div class="author-info">
+                            <h4>Amanda Chen</h4>
+                            <p>Owner, Wellness Tea Co.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta" id="cta">
+        <div class="container">
+            <h2>Ready to Transform Your Instagram?</h2>
+            <p>Join thousands of women entrepreneurs who have mastered Instagram with our proven system</p>
+            <a href="https://technologymoguls.com/?utm_source=Facebook&utm_medium=Facebook%20ads&utm_campaign=IMWE%20CB%201&utm_term=courses&utm_content=AA%20Agency%20Video%201"
+                class="cta-button">Enroll in IM WE Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>IM WE</h3>
+                    <p>Instagram Mastery for Women Entrepreneurs</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#showcase">Showcase</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@imwecourse.com</li>
+                        <li><i class="fas fa-phone"></i> (555) 123-4567</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 IM WE - Instagram Mastery for Women Entrepreneurs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Tab functionality for showcase section
+            const showcaseTabs = document.querySelectorAll('.showcase-tab');
+            const showcaseContents = document.querySelectorAll('.showcase-content');
+
+            showcaseTabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+
+                    // Update active tab button
+                    showcaseTabs.forEach(t => t.classList.remove('active'));
+                    tab.classList.add('active');
+
+                    // Show active tab content
+                    showcaseContents.forEach(content => content.classList.remove('active'));
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // Carousel functionality
+            const carousel = document.querySelector('.carousel');
+            const slides = document.querySelectorAll('.carousel-slide');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            let currentSlide = 0;
+
+            function updateCarousel() {
+                carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }
+
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateCarousel();
+            });
+
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+                updateCarousel();
+            });
+
+            // Auto-advance carousel
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % slides.length;
+                updateCarousel();
+            }, 5000);
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

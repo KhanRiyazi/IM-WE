@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IM WE - Creative Content Showcase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Import modern fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(to right, #8A2BE2, #5D3FD3);
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 12px 25px;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(to right, #8A2BE2, #5D3FD3);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(93, 63, 211, 0.3);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: #f1f3f5;
+            transform: translateY(-2px);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Video Script Styles */
+        .script-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .script-scene {
+            padding: 30px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .script-scene:last-child {
+            border-bottom: none;
+        }
+
+        .scene-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .scene-time {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            color: #5D3FD3;
+            background: #f0ebff;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .scene-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: #444;
+        }
+
+        .scene-content {
+            display: flex;
+            gap: 20px;
+        }
+
+        .scene-visual {
+            width: 40%;
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+        }
+
+        .visual-icon {
+            font-size: 2.5rem;
+            color: #5D3FD3;
+            margin-bottom: 10px;
+        }
+
+        .visual-description {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #6c757d;
+        }
+
+        .scene-dialogue {
+            width: 60%;
+        }
+
+        .dialogue-text {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #5D3FD3;
+            font-size: 1.1rem;
+            line-height: 1.5;
+        }
+
+        .play-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to right, #8A2BE2, #5D3FD3);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .play-btn:hover {
+            background: linear-gradient(to right, #7930c0, #4c32ab);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(93, 63, 211, 0.3);
+        }
+
+        /* Social Media Post Styles */
+        .social-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-header {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .social-avatar {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(to right, #8A2BE2, #5D3FD3);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .social-info h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .social-info p {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        .social-body {
+            padding: 25px;
+        }
+
+        .post-content {
+            margin-bottom: 20px;
+        }
+
+        .post-headline {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .myth-list {
+            list-style: none;
+        }
+
+        .myth-item {
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            border-left: 4px solid #ff6b6b;
+        }
+
+        .myth-item.truth {
+            border-left-color: #51cf66;
+        }
+
+        .myth-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .myth-title i {
+            margin-right: 10px;
+        }
+
+        .myth-text {
+            padding-left: 28px;
+        }
+
+        .social-cta {
+            background: #f0ebff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .social-engagement {
+            display: flex;
+            justify-content: space-around;
+            padding: 15px 0;
+            border-top: 1px solid #eee;
+            color: #6c757d;
+        }
+
+        .engagement-btn {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .engagement-btn:hover {
+            color: #5D3FD3;
+        }
+
+        /* Email Campaign Styles */
+        .email-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .email-header {
+            background: linear-gradient(to right, #8A2BE2, #5D3FD3);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .email-subject {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .email-preview {
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .email-body {
+            padding: 30px;
+        }
+
+        .email-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .email-salutation {
+            margin-bottom: 20px;
+        }
+
+        .email-headline {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #444;
+            line-height: 1.3;
+        }
+
+        .email-text {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .email-feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .feature-icon {
+            background: #5D3FD3;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .feature-content h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #444;
+        }
+
+        .email-cta {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .email-button {
+            display: inline-block;
+            padding: 16px 40px;
+            background: linear-gradient(to right, #8A2BE2, #5D3FD3);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(93, 63, 211, 0.3);
+        }
+
+        .email-button:hover {
+            background: linear-gradient(to right, #7930c0, #4c32ab);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(93, 63, 211, 0.4);
+        }
+
+        .email-footer {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            .scene-content {
+                flex-direction: column;
+            }
+
+            .scene-visual,
+            .scene-dialogue {
+                width: 100%;
+            }
+
+            .scene-visual {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>IM WE Creative Content Showcase</h1>
+            <p>Copywriting & Concept Examples for Instagram Mastery Course</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="video">Video Ad Script</button>
+            <button class="tab-btn" data-tab="social">Social Media Post</button>
+            <button class="tab-btn" data-tab="email">Email Campaign</button>
+        </div>
+
+        <!-- Video Ad Script Content -->
+        <div class="tab-content active" id="video">
+            <div class="script-container">
+                <div class="script-scene">
+                    <div class="scene-header">
+                        <span class="scene-time">0-3s</span>
+                        <h3 class="scene-title">Hook</h3>
+                    </div>
+                    <div class="scene-content">
+                        <div class="scene-visual">
+                            <div class="visual-icon"><i class="fas fa-meh"></i></div>
+                            <div class="visual-description">Woman looking frustrated at her phone showing low engagement
+                            </div>
+                        </div>
+                        <div class="scene-dialogue">
+                            <div class="dialogue-text">
+                                "Does your Instagram feel like you're shouting into a void?"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="script-scene">
+                    <div class="scene-header">
+                        <span class="scene-time">4-10s</span>
+                        <h3 class="scene-title">Problem</h3>
+                    </div>
+                    <div class="scene-content">
+                        <div class="scene-visual">
+                            <div class="visual-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="visual-description">Flatlining analytics graph on a phone screen</div>
+                        </div>
+                        <div class="scene-dialogue">
+                            <div class="dialogue-text">
+                                "You're putting in the work, but the followers and sales aren't coming."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="script-scene">
+                    <div class="scene-header">
+                        <span class="scene-time">11-20s</span>
+                        <h3 class="scene-title">Solution & Transformation</h3>
+                    </div>
+                    <div class="scene-content">
+                        <div class="scene-visual">
+                            <div class="visual-icon"><i class="fas fa-film"></i></div>
+                            <div class="visual-description">Quick cuts of someone filming reels, analytics growing,
+                                sales notifications</div>
+                        </div>
+                        <div class="scene-dialogue">
+                            <div class="dialogue-text">
+                                "What if you had a proven blueprint? IM WE teaches you the exact system to turn your
+                                profile into your most powerful sales tool."
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="script-scene">
+                    <div class="scene-header">
+                        <span class="scene-time">21-30s</span>
+                        <h3 class="scene-title">Call to Action</h3>
+                    </div>
+                    <div class="scene-content">
+                        <div class="scene-visual">
+                            <div class="visual-icon"><i class="fas fa-arrow-right"></i></div>
+                            <div class="visual-description">Course logo and website link on screen</div>
+                        </div>
+                        <div class="scene-dialogue">
+                            <div class="dialogue-text">
+                                "Stop guessing. Start growing. Click the link to learn more about the IM WE course!"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="play-btn">
+                    <i class="fas fa-play-circle"></i> Play Video Ad Concept
+                </button>
+            </div>
+        </div>
+
+        <!-- Social Media Post Content -->
+        <div class="tab-content" id="social">
+            <div class="social-container">
+                <div class="social-header">
+                    <div class="social-avatar">IM</div>
+                    <div class="social-info">
+                        <h3>IM WE - Instagram Mastery</h3>
+                        <p>Sponsored · Follow</p>
+                    </div>
+                </div>
+
+                <div class="social-body">
+                    <div class="post-content">
+                        <h2 class="post-headline">3 Myths About Instagram That Are Holding Your Business Back ❌</h2>
+
+                        <ul class="myth-list">
+                            <li class="myth-item">
+                                <div class="myth-title"><i class="fas fa-times-circle"></i> Myth 1: You need to post 3
+                                    times a day to be successful.</div>
+                                <div class="myth-text truth">Truth: Consistency > Frequency! It's better to post
+                                    high-quality content consistently than to overwhelm your audience with mediocre
+                                    posts.</div>
+                            </li>
+                            <li class="myth-item">
+                                <div class="myth-title"><i class="fas fa-times-circle"></i> Myth 2: Reels are just for
+                                    dancers and teens.</div>
+                                <div class="myth-text truth">Truth: They're the #1 tool for reach! Reels can help you
+                                    reach thousands of potential customers who don't follow you yet.</div>
+                            </li>
+                            <li class="myth-item">
+                                <div class="myth-title"><i class="fas fa-times-circle"></i> Myth 3: A beautiful feed is
+                                    enough.</div>
+                                <div class="myth-text truth">Truth: Strategy is everything! Without a clear strategy,
+                                    even the most beautiful feed won't generate leads or sales.</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="social-cta">
+                        <p>We bust these myths and more in our IM WE course. What's the biggest challenge you're facing
+                            on IG? Comment below! 👇</p>
+                    </div>
+                </div>
+
+                <div class="social-engagement">
+                    <div class="engagement-btn"><i class="far fa-heart"></i> Like</div>
+                    <div class="engagement-btn"><i class="far fa-comment"></i> Comment</div>
+                    <div class="engagement-btn"><i class="far fa-share-square"></i> Share</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Email Campaign Content -->
+        <div class="tab-content" id="email">
+            <div class="email-container">
+                <div class="email-header">
+                    <div class="email-subject">Your Instagram strategy is missing this one thing...</div>
+                    <div class="email-preview">It's not another filter. It's a framework. Inside IM WE, we...</div>
+                </div>
+
+                <div class="email-body">
+                    <div class="email-content">
+                        <div class="email-salutation">
+                            <p>Hey [First Name],</p>
+                        </div>
+
+                        <h2 class="email-headline">Your Instagram strategy is missing this one thing...</h2>
+
+                        <p class="email-text">And it's not another filter, trending audio, or posting schedule.</p>
+
+                        <p class="email-text">After working with thousands of women entrepreneurs, we've discovered that
+                            the most successful Instagram strategies all have one thing in common:</p>
+
+                        <div class="email-feature">
+                            <div class="feature-icon"><i class="fas fa-sitemap"></i></div>
+                            <div class="feature-content">
+                                <h3>A Clear Framework</h3>
+                                <p>Not random tactics, but a proven system that converts followers into customers.</p>
+                            </div>
+                        </div>
+
+                        <p class="email-text">Inside IM WE, we give you the exact framework that our students use to:
+                        </p>
+
+                        <div class="email-feature">
+                            <div class="feature-icon"><i class="fas fa-users"></i></div>
+                            <div class="feature-content">
+                                <h3>Build an Engaged Community</h3>
+                                <p>Attract your ideal followers who actually want to hear from you.</p>
+                            </div>
+                        </div>
+
+                        <div class="email-feature">
+                            <div class="feature-icon"><i class="fas fa-shopping-cart"></i></div>
+                            <div class="feature-content">
+                                <h3>Generate Consistent Sales</h3>
+                                <p>Convert followers into paying customers without being salesy.</p>
+                            </div>
+                        </div>
+
+                        <div class="email-feature">
+                            <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="feature-content">
+                                <h3>Save Time & Energy</h3>
+                                <p>Stop guessing what to post and start seeing real results.</p>
+                            </div>
+                        </div>
+
+                        <div class="email-cta">
+                            <a href="https://technologymoguls.com/?utm_source=Facebook&utm_medium=Facebook%20ads&utm_campaign=IMWE%20CB%201&utm_term=courses&utm_content=AA%20Agency%20Video%201"
+                                class="email-button">Discover The IM WE Framework</a>
+                        </div>
+
+                        <p class="email-text">Your journey to Instagram mastery starts here,</p>
+                        <p class="email-text"><strong>The IM WE Team</strong></p>
+                    </div>
+                </div>
+
+                <div class="email-footer">
+                    <p>IM WE - Instagram Mastery for Women Entrepreneurs</p>
+                    <p>123 Business Avenue, Entrepreneur City | Unsubscribe</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>IM WE - Instagram Mastery for Women Entrepreneurs | Creative Content Showcase</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Tab functionality
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const tabId = btn.getAttribute('data-tab');
+
+                    // Update active tab button
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    // Show active tab content
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // Play button animation
+            const playBtn = document.querySelector('.play-btn');
+            playBtn.addEventListener('click', function () {
+                this.innerHTML = '<i class="fas fa-sync-alt"></i> Replay Video Concept';
+
+                // Simple animation effect
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 100);
+            });
+
+            // Social media engagement buttons
+            const engagementBtns = document.querySelectorAll('.engagement-btn');
+            engagementBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    this.style.color = '#5D3FD3';
+                    setTimeout(() => {
+                        this.style.color = '';
+                    }, 500);
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
