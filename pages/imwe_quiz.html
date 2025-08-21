@@ -461,6 +461,33 @@
             font-size: 0.9rem;
         }
 
+        /* Home Button Styles */
+        .home-button {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(to right, #8A2BE2, #5D3FD3);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(93, 63, 211, 0.4);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .home-button:hover {
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(93, 63, 211, 0.6);
+        }
+
         @media (max-width: 768px) {
             header h1 {
                 font-size: 2.2rem;
@@ -478,13 +505,26 @@
             .scene-visual {
                 margin-bottom: 15px;
             }
+
+            .home-button {
+                right: 10px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
         }
     </style>
 </head>
 
 <body>
+    <!-- Home Button -->
+    <button class="home-button" id="homeButton" title="Go to Home">
+        <i class="fas fa-home"></i>
+    </button>
+
     <div class="container">
         <header>
+            <img src="../imgs/logo.png" alt="IM WE Logo" style="width: 150px; height: auto; margin-bottom: 20px;">
             <h1>IM WE Creative Content Showcase</h1>
             <p>Copywriting & Concept Examples for Instagram Mastery Course</p>
         </header>
@@ -750,6 +790,13 @@
                         this.style.color = '';
                     }, 500);
                 });
+            });
+
+            // Home button functionality
+            const homeButton = document.getElementById('homeButton');
+            homeButton.addEventListener('click', function () {
+                // Replace with your actual home page URL
+                window.location.href = '/';
             });
         });
     </script>
